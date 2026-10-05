@@ -55,9 +55,9 @@ La contraseña de las tres cuentas locales es `Demo123!`.
 
 Estas credenciales se crean únicamente para demostrar el proyecto en un entorno local. Antes de desplegar, reemplace la clave JWT y las credenciales de PostgreSQL mediante variables de entorno, active HTTPS y quite los datos iniciales de demostración.
 
-## Despliegue público
+## Despliegue público gratuito
 
-La publicación integra el frontend compilado dentro de ASP.NET Core y utiliza la misma URL para la interfaz y la API. La instancia pública usa una base SQLite persistente configurada por variables de entorno de Azure; el entorno local y Docker continúan usando PostgreSQL. El flujo de GitHub Actions ejecuta pruebas, análisis estático, compilación y despliegue en cada cambio a `main`.
+La versión pública se publica en GitHub Pages. Es una edición estática funcional: las cuentas, publicaciones, comentarios, reacciones, comunidades, búsquedas y perfil se guardan en `localStorage` del navegador de cada visitante. El backend ASP.NET Core, JWT, Swagger y PostgreSQL se conservan para la ejecución completa local o en un servidor compatible. GitHub Actions ejecuta pruebas, análisis estático, compilación y publicación en cada cambio a `main`.
 
 ## Configuración
 

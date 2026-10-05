@@ -7,6 +7,12 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   test-build-deploy:
@@ -35,32 +41,16 @@ jobs:
         run: |
           npm ci
           npm run lint
-          VITE_API_URL='' npm run build
+          VITE_STATIC_DEMO=true npm run build
 
-      - name: Integrar frontend estático en la API
-        run: |
-          mkdir -p codigo_fuente/backend/CampusConecta.Api/wwwroot
-          cp -R codigo_fuente/frontend/dist/. codigo_fuente/backend/CampusConecta.Api/wwwroot/
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
 
-      - name: Publicar aplicación ASP.NET Core
-        run: dotnet publish codigo_fuente/backend/CampusConecta.Api/CampusConecta.Api.csproj --configuration Release --output codigo_fuente/.publish/campusconecta
-
-      - name: Empaquetar publicación
-        working-directory: codigo_fuente/.publish/campusconecta
-        run: zip -r ../campusconecta.zip .
-
-      - name: Iniciar sesión en Azure
-        uses: azure/login@v2
+      - name: Cargar sitio estático
+        uses: actions/upload-pages-artifact@v3
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          path: codigo_fuente/frontend/dist
 
-      - name: Desplegar en Azure App Service
-        uses: azure/cli@v2
-        with:
-          inlineScript: |
-            az webapp deploy \
-              --resource-group rg-campusconecta-student \
-              --name campusconecta-upt-20261004 \
-              --src-path "$GITHUB_WORKSPACE/codigo_fuente/.publish/campusconecta.zip" \
-              --type zip \
-              --async true
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

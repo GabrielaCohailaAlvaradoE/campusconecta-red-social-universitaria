@@ -27,9 +27,10 @@ Swagger: `http://localhost:5050/swagger`
 
 ## Enlaces públicos
 
-- Aplicación: [campusconecta-upt-20261004.azurewebsites.net](https://campusconecta-upt-20261004.azurewebsites.net/)
-- API documentada: [Swagger/OpenAPI](https://campusconecta-upt-20261004.azurewebsites.net/swagger/index.html)
+- Aplicación: [CampusConecta en GitHub Pages](https://gabrielacohailaalvaradoe.github.io/campusconecta-red-social-universitaria/)
 - Automatización: [GitHub Actions](https://github.com/GabrielaCohailaAlvaradoE/campusconecta-red-social-universitaria/actions)
+
+La edición publicada en GitHub Pages es estática y guarda su información en el navegador de cada persona. El backend ASP.NET Core, API REST, JWT y PostgreSQL se incluyen en `codigo_fuente` para ejecución local o en un servidor compatible.
 
 Para ejecutar pruebas:
 
