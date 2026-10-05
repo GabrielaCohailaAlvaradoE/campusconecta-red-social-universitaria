@@ -1,0 +1,44 @@
+ESTRUCTURA FUNCIONAL DE CAMPUSCONECTA
+
+codigo_fuente/
+|-- CampusConecta.sln
+|-- docker-compose.yml
+|-- instalar.ps1
+|-- iniciar.ps1
+|-- detener.ps1
+|-- probar.ps1
+|-- backend/
+|   |-- CampusConecta.Api/
+|   |   |-- Controllers/
+|   |   |   |-- AuthController.cs
+|   |   |   |-- UsersController.cs
+|   |   |   |-- PostsController.cs
+|   |   |   |-- CommunitiesController.cs
+|   |   |   |-- SearchController.cs
+|   |   |   `-- DashboardController.cs
+|   |   |-- Data/
+|   |   |   |-- AppDbContext.cs
+|   |   |   `-- Migrations/
+|   |   |-- Infrastructure/
+|   |   |-- Models/
+|   |   |-- Services/
+|   |   `-- Program.cs
+|   `-- CampusConecta.Tests/
+|       |-- ApiFlowTests.cs
+|       `-- CampusApiFactory.cs
+`-- frontend/
+    |-- src/
+    |   |-- App.tsx
+    |   |-- App.css
+    |   |-- api.ts
+    |   |-- index.css
+    |   `-- main.tsx
+    |-- package.json
+    `-- vite.config.ts
+
+Capas principales:
+1. Presentación: SPA React responsiva.
+2. Servicios: controladores REST de ASP.NET Core.
+3. Dominio y persistencia: entidades, reglas, DbContext y migraciones EF Core.
+4. Infraestructura: PostgreSQL, JWT, middleware de errores, Swagger y Docker Compose.
+

@@ -1,0 +1,19 @@
+CampusConecta: red social universitaria
+
+Gabriela Estefania Cohaila Alvarado (2022075746)
+Victoria Isabel Lavarello Vidaurre (2023077281)
+
+Artículo individual de Gabriela:
+articulo_Gabriela_Cohaila/articulo_Gabriela_Cohaila.md
+
+Artículo individual de Victoria:
+articulo_Victoria_Lavarello/articulo_Victoria_Lavarello.md
+
+Repositorio público:
+https://github.com/GabrielaCohailaAlvaradoE/campusconecta-red-social-universitaria
+
+Aplicación pública:
+https://campusconecta-upt-20261004.azurewebsites.net/
+
+Automatización comprobada:
+https://github.com/GabrielaCohailaAlvaradoE/campusconecta-red-social-universitaria/actions

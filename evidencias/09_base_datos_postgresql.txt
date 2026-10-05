@@ -1,0 +1,31 @@
+EVIDENCIA DE BASE DE DATOS POSTGRESQL
+Fecha de verificación: 4 de octubre de 2026
+
+Motor verificado:
+PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.25.10.1) sobre x86_64-pc-linux-gnu
+
+Base de datos utilizada durante la prueba integral:
+campusconecta
+
+Migración aplicada:
+20261004222623_InitialCreate
+
+Registros después del flujo de aceptación:
+- Users: 3
+- Posts: 3
+- Comments: 2
+- Reactions: 3
+- Communities: 1
+- CommunityMembers: 3
+
+Comprobaciones realizadas:
+- La API inició contra una instancia PostgreSQL real.
+- Entity Framework Core aplicó la migración inicial.
+- El inicializador creó usuarios, publicaciones, comentarios, reacciones y una comunidad.
+- Una publicación, un comentario y una reacción nuevos se persistieron mediante HTTP.
+- La búsqueda recuperó la publicación creada.
+- El panel personal reflejó los cambios persistidos.
+
+Nota de portabilidad:
+La entrega usa PostgreSQL 16 Alpine mediante docker-compose.yml. La validación local se realizó con PostgreSQL 18.6 porque era la instancia disponible; el proveedor Npgsql y las sentencias generadas son compatibles con ambas versiones.
+

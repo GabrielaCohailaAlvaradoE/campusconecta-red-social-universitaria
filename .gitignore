@@ -1,0 +1,4 @@
+# Salidas reproducibles de compilación y publicación
+codigo_fuente/.publish/
+codigo_fuente/backend/CampusConecta.Api/wwwroot/
+entrega_enlaces*.zip

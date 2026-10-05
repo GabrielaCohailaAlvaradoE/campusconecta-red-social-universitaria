@@ -1,0 +1,6 @@
+@CampusConecta.Api_HostAddress = http://localhost:5173
+
+GET {{CampusConecta.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

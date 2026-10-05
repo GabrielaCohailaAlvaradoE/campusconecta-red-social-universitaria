@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: campusconecta-postgres
+    environment:
+      POSTGRES_DB: campusconecta
+      POSTGRES_USER: campus
+      POSTGRES_PASSWORD: campus_dev_password
+    ports:
+      - "54329:5432"
+    volumes:
+      - campusconecta_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U campus -d campusconecta"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  campusconecta_data:

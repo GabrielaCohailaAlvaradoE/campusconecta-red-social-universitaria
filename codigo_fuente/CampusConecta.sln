@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{E21D34AA-282D-4F2B-8013-16A542AD6B68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusConecta.Api", "backend\CampusConecta.Api\CampusConecta.Api.csproj", "{9569E1D3-7E06-4E96-B862-157FB6E02105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusConecta.Tests", "backend\CampusConecta.Tests\CampusConecta.Tests.csproj", "{C74096EF-5BB7-49BF-B880-267440FB65B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9569E1D3-7E06-4E96-B862-157FB6E02105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9569E1D3-7E06-4E96-B862-157FB6E02105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9569E1D3-7E06-4E96-B862-157FB6E02105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9569E1D3-7E06-4E96-B862-157FB6E02105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74096EF-5BB7-49BF-B880-267440FB65B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74096EF-5BB7-49BF-B880-267440FB65B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74096EF-5BB7-49BF-B880-267440FB65B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74096EF-5BB7-49BF-B880-267440FB65B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9569E1D3-7E06-4E96-B862-157FB6E02105} = {E21D34AA-282D-4F2B-8013-16A542AD6B68}
+		{C74096EF-5BB7-49BF-B880-267440FB65B9} = {E21D34AA-282D-4F2B-8013-16A542AD6B68}
+	EndGlobalSection
+EndGlobal

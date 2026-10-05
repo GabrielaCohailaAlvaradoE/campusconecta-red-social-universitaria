@@ -1,0 +1,44 @@
+RESULTADOS DE PRUEBAS Y VERIFICACIÓN
+Fecha: 4 de octubre de 2026
+
+Pruebas automáticas del backend
+Comando: dotnet test CampusConecta.sln --configuration Release
+Resultado: 6 aprobadas, 0 fallidas, 0 omitidas.
+
+Casos cubiertos:
+1. Estado de salud de la API.
+2. Verificación del hash de contraseña de una cuenta inicial.
+3. Rechazo de contraseña débil y registro válido con JWT.
+4. Inicio de sesión, feed, publicación, comentario, reacción y panel.
+5. Creación de comunidad, búsqueda, perfil y membresía.
+6. Rechazo de acceso sin JWT a un endpoint protegido.
+
+Frontend
+Comando: npm run lint
+Resultado: aprobado sin advertencias.
+
+Comando: npm run build
+Resultado: compilación de producción correcta.
+- JavaScript: 238.04 kB, 73.35 kB comprimido con gzip.
+- CSS: 13.87 kB, 3.83 kB comprimido con gzip.
+
+Prueba integral con PostgreSQL real
+- GET /health: healthy.
+- Inicio de sesión: correcto.
+- Publicación: creada y recuperada desde el feed.
+- Comentario: creado y persistido.
+- Reacción Insightful: creada y contabilizada.
+- Búsqueda: encontró la publicación de aceptación.
+- Panel: 2 publicaciones propias, 1 comentario, 2 reacciones recibidas y 1 comunidad.
+
+Medición exploratoria local del feed
+- Muestra: 20 solicitudes GET consecutivas.
+- Media: 5.40 ms.
+- Mediana: 4.73 ms.
+- Percentil 95: 9.58 ms.
+- Mínimo: 3.27 ms.
+- Máximo: 11.21 ms.
+
+Alcance de la medición:
+Los tiempos corresponden a un único equipo y un solo usuario concurrente. Sirven para detectar regresiones evidentes durante el desarrollo, pero no sustituyen una prueba de carga ni permiten proyectar capacidad productiva.
+
