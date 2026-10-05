@@ -45,9 +45,23 @@ jobs:
       - name: Publicar aplicación ASP.NET Core
         run: dotnet publish codigo_fuente/backend/CampusConecta.Api/CampusConecta.Api.csproj --configuration Release --output codigo_fuente/.publish/campusconecta
 
-      - name: Desplegar en Azure App Service
-        uses: azure/webapps-deploy@v3
+      - name: Empaquetar publicación
+        working-directory: codigo_fuente/.publish/campusconecta
+        run: zip -r ../campusconecta.zip .
+
+      - name: Iniciar sesión en Azure
+        uses: azure/login@v2
         with:
-          app-name: campusconecta-upt-20261004
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: codigo_fuente/.publish/campusconecta
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Desplegar en Azure App Service
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az webapp deploy \
+              --resource-group rg-campusconecta-student \
+              --name campusconecta-upt-20261004 \
+              --src-path "$GITHUB_WORKSPACE/codigo_fuente/.publish/campusconecta.zip" \
+              --type zip \
+              --async false \
+              --track-status true
