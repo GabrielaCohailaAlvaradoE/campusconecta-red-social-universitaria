@@ -28,7 +28,7 @@ jobs:
           cache-dependency-path: codigo_fuente/frontend/package-lock.json
 
       - name: Ejecutar pruebas del backend
-        run: dotnet test codigo_fuente/backend/CampusConecta.Tests/CampusConecta.Tests.csproj --configuration Release --no-restore
+        run: dotnet test codigo_fuente/backend/CampusConecta.Tests/CampusConecta.Tests.csproj --configuration Release
 
       - name: Instalar, analizar y compilar frontend
         working-directory: codigo_fuente/frontend
