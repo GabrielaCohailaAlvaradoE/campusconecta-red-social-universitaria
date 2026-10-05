@@ -63,5 +63,4 @@ jobs:
               --name campusconecta-upt-20261004 \
               --src-path "$GITHUB_WORKSPACE/codigo_fuente/.publish/campusconecta.zip" \
               --type zip \
-              --async false \
-              --track-status true
+              --async true
